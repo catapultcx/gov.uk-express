@@ -74,10 +74,14 @@ Run locally
 
 ##### Docker  
 
-Run locally
+Prerequisites
+  animals-api repo
+     
+     1. mvn clean build - to create the .jar file
+     2. docker build -t animals-service:latest to build the image
+  animals-ui repo
+     3. docker-compose up
 
-    docker-compose up
-    
 ### Accessing locally
 
 The service will be available at http://localhost:2997/
