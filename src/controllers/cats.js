@@ -24,3 +24,20 @@ exports.add = function (req, res) {
   })
 }
 
+exports.updatePage = function (req, res) {
+  cats.get(req.params.id).then((data) => {
+    res.render('update-cats', { cat: data })
+  })
+}
+exports.update = function (req, res) {
+
+  const reqItem = {
+    reqUrl : "/update/"+req.params.id,
+    body: req.body
+  }
+
+  cats.update(reqItem).then((data) => {
+    res.redirect('/cats')
+  })
+}
+
