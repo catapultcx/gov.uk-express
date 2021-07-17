@@ -54,6 +54,11 @@ describe('/', function () {
     return agent.post('/cats').expect(302).send({name: 'Test cat', description: 'Test description'})
   })
 
+  it('should update a cat', function () {
+    // TODO how to stage test data?
+    return agent.put('/cats/123').expect(404).send({id:123, name: 'Test cat', description: 'Test description'})
+  })
+
   afterEach('Teardown', function () {
     console.log('Teardown')
     server.close()

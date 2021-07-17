@@ -1,14 +1,14 @@
 require('dotenv').config()
 require('should')
 
-const Cats = require('../../src/services/cats')
-const service = new Cats(process.env.API_URL)
+const Arachnids = require('../../src/services/arachnids')
+const service = new Arachnids(process.env.API_URL)
 let created
 
-describe('cats', function () {
+describe('arachnids', function () {
 
-  it('get create a cat', function () {
-    let item = { name: 'Tom', description: 'Friend of Jerry' }
+  it('get create an arachnid', function () {
+    let item = { name: 'Spider McSpiderface', description: 'Hairy' }
     return service.create(item).then((data) => {
       data.name.should.eql(item.name)
       data.description.should.eql(item.description)
@@ -17,8 +17,8 @@ describe('cats', function () {
     })
   })
 
-  it('update a cat', function () {
-    let item = { name: 'Cat', description: 'Furry' }
+  it('update an arachnid', function () {
+    let item = { name: 'Spider McSpiderface', description: 'Hairy' }
     return service.update(item).then((data) => {
       data.name.should.eql(item.name)
       data.description.should.eql(item.description)
@@ -27,7 +27,7 @@ describe('cats', function () {
     })
   })
 
-  it('get a created cat', function () {
+  it('get a created arachnid', function () {
     return service.get(created.id).then((data) => {
       data.name.should.eql(data.name)
       data.id.should.eql(data.id)
@@ -35,7 +35,7 @@ describe('cats', function () {
     })
   })
 
-  it('get all cats', function () {
+  it('get all arachnids', function () {
     return service.all().then((data) => {
       data.should.have.property('length')
     })

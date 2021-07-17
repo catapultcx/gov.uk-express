@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="govuk-width-container app-site-width-container">
+
+    <h1 class="govuk-heading-l">Arachnid</h1>
+
+    <table class="govuk-table">
+        <caption class="govuk-table__caption">Arachnid</caption>
+        <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name</th>
+            <td class="govuk-table__cell">{{ arachnid.name }}</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Description</th>
+            <td class="govuk-table__cell">{{ arachnid.description }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Delete</th>
+            <td class="govuk-table__cell"><a class="govuk-button" href="/arachnids/delete/{{arachnid.id}}">Delete</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Edit</th>
+            <td class="govuk-table__cell"><a class="govuk-button" href="/arachnids/edit/{{arachnid.id}}">Edit</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
